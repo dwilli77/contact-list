@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ContactList</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= yield %>
+    <%# <script>
+      
+        let clickCount = 0;
+
+        let adminItems = document.querySelectorAll('.admin');
+
+        let adminButton = document.getElementById('admin-button');
+
+        adminButton.addEventListener('click', () => {
+          clickCount ++;
+          if (clickCount > 9) {
+            showAdmin();
+          }
+        })
+
+        const showAdmin = () => {
+          adminItems.forEach(item => {
+            item.classList.remove('none');
+          })
+        }
+      
+    </%#> %>
+  </body>
+</html>
