@@ -1,16 +1,21 @@
 # Place all the behaviors and hooks related to the matching controller here.
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
-document.addEventListener 'DOMContentLoaded', () -> 
+
+showAdmin = (items, button) ->
+  items.forEach((item) ->
+    item.classList.remove 'none'
+  )
+
+startListening = ->
   clickCount = 0
   adminItems = document.querySelectorAll('.admin')
   adminButton = document.getElementById('admin-button')
-  adminButton.addEventListener 'click', () ->
+  adminButton.addEventListener 'click', _clicker = () ->
     clickCount++
-    console.log(clickCount)
-    showAdmin() if clickCount > 9
+    showAdmin(adminItems, adminButton) if clickCount > 9
+    adminButton.removeEventListener 'click', _clicker if clickCount > 9
 
-  showAdmin = ->
-    adminItems.forEach((item) ->
-      item.classList.remove 'none'
-    )
+document.addEventListener 'turbolinks:load', () ->
+  if location.pathname is '/' or location.pathname is '/families'
+    startListening()
