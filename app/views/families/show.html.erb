@@ -1,29 +1,29 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<p class="show-p">
   <strong>Kid:</strong>
   <%= @family.kid %>
 </p>
 
-<p>
+<p class="show-p">
   <strong>Last name:</strong>
   <%= @family.last_name %>
 </p>
 
-<p>
+<p class="show-p">
   <strong>Parent name:</strong>
   <%= @family.parent_name %>
 </p>
 
-<p>
+<p class="show-p">
   <strong>Email:</strong>
   <%= @family.email %>
 </p>
 
-<p>
+<p class="show-p">
   <strong>Phone number:</strong>
   <%= @family.phone_number %>
 </p>
 
-<%= link_to 'Edit', edit_family_path(@family) %> |
-<%= link_to 'Back', families_path %>
+<%= link_to 'Edit', edit_family_path(@family), :class => 'edit-button' %> 
+<%= link_to 'Back', families_path, :class => 'back-button' %>

@@ -13,30 +13,30 @@
 
   <div class="field">
     <%= form.label :kid %>
-    <%= form.text_field :kid %>
-  </div>
-
-  <div class="field">
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name %>
+    <%= form.text_field :kid, :class => 'form-input' %>
   </div>
 
   <div class="field">
     <%= form.label :parent_name %>
-    <%= form.text_field :parent_name %>
+    <%= form.text_field :parent_name, :class => 'form-input' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name, :class => 'form-input' %>
   </div>
 
   <div class="field">
     <%= form.label :email %>
-    <%= form.text_field :email %>
+    <%= form.text_field :email, :class => 'form-input' %>
   </div>
 
   <div class="field">
     <%= form.label :phone_number %>
-    <%= form.text_field :phone_number %>
+    <%= form.text_field :phone_number, :class => 'form-input' %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Add', :class => 'action-button' %>
   </div>
 <% end %>
