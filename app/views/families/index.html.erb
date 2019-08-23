@@ -3,8 +3,8 @@
   <thead>
     <tr>
       <th>Child</th>
-      <th>Parent(s) name</th>
       <th>Last name</th>
+      <th>Parent(s) name</th>
       <th>Email</th>
       <th>Phone number</th>
       <% if current_user.is_admin %>
@@ -17,8 +17,8 @@
     <% @families.each do |family| %>
       <tr>
         <td><%= family.kid %></td>
-        <td><%= family.parent_name %></td>
         <td><%= family.last_name %></td>
+        <td><%= family.parent_name %></td>
         <td><%= family.email %></td>
         <td><%= family.phone_number %></td>
         <% if current_user.is_admin %>
