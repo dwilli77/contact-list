@@ -10,28 +10,14 @@
   </head>
 
   <body>
+
+  <% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
     <%= yield %>
-    <%# <script>
-      
-        let clickCount = 0;
-
-        let adminItems = document.querySelectorAll('.admin');
-
-        let adminButton = document.getElementById('admin-button');
-
-        adminButton.addEventListener('click', () => {
-          clickCount ++;
-          if (clickCount > 9) {
-            showAdmin();
-          }
-        })
-
-        const showAdmin = () => {
-          adminItems.forEach(item => {
-            item.classList.remove('none');
-          })
-        }
-      
-    </%#> %>
+    
   </body>
 </html>

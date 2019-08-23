@@ -1,10 +1,13 @@
+* {
+  box-sizing: border-box;
+}
 body {
   background-color: #ccf6ff;
   color: #333;
   margin: 33px;
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 14px;
-  line-height: 18px;
+  font-size: 16px;
+  line-height: 1.25;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -44,7 +47,7 @@ ul,
 td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 15px;
-  line-height: 18px;
+  line-height: 1.25;
 }
 
 pre {
@@ -123,12 +126,12 @@ label {
 .action-button,
 .back-button,
 .edit-button {
-  font-size: 18px;
+  font-size: 24px;
   text-decoration: none;
   border: 2px solid #e79236;
   background: #fff;
   color: #e79236;
-  padding: 3px 15px;
+  padding: 10px 25px;
   border-radius: 500px;
   float: center;
   &:visited {
@@ -138,6 +141,9 @@ label {
     background: #e79236;
     color: #fff;
     cursor: pointer;
+  }
+  &:focus {
+    outline: none;
   }
 }
 .actions {
@@ -171,10 +177,10 @@ label {
 }
 
 .form-input {
-  font-size: 16px;
+  font-size: 18px;
   border: 1px solid #2b3843;
   border-radius: 500px;
-  padding: 7px 6px;
+  padding: 12px 18px;
   &:focus {
     outline: none;
   }
@@ -182,4 +188,24 @@ label {
 
 .show-p {
   font-size: 18px;
+}
+
+.remember-me {
+  display: flex;
+}
+
+.alert-danger {
+  border: 3px solid crimson;
+  color: crimson;
+  padding: 15px;
+  background: #ffd8dd;
+  border-radius: 5px;
+}
+
+.alert-success {
+  border: 3px solid darkgreen;
+  color: darkgreen;
+  padding: 15px;
+  background: #caffcf;
+  border-radius: 5px;
 }

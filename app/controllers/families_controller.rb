@@ -1,4 +1,6 @@
 class FamiliesController < ApplicationController
+  
+  before_action :authenticate_user!
   before_action :set_family, only: [:show, :edit, :update, :destroy]
 
   # GET /families
@@ -10,11 +12,18 @@ class FamiliesController < ApplicationController
   # GET /families/1
   # GET /families/1.json
   def show
+    if !current_user.is_admin
+      redirect_to families_url
+    end
   end
 
   # GET /families/new
   def new
-    @family = Family.new
+    if current_user.is_admin
+      @family = Family.new
+    else
+      redirect_to families_url
+    end
   end
 
   # GET /families/1/edit
