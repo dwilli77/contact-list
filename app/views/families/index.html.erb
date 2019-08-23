@@ -33,10 +33,10 @@
 
 <br/>
 
+<% if current_user.is_admin %>
+  <%= link_to 'Add New Family', new_family_path, class: "admin new-family" %>
+  <br/>
+<% end %>
+
 <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'action-button logout'  %>
 
-<br/>
-
-<% if current_user.is_admin %>
-<%= link_to 'Add New Family', new_family_path, class: "admin new-family" %>
-<% end %>
