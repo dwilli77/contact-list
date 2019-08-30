@@ -19,6 +19,20 @@ body {
 h1 {
   text-align: center;
 }
+.sight-word-link {
+  color: #1e90ff;
+  border-bottom: 1px dotted #1e90ff;
+  text-decoration: none;
+  transition: color 1s;
+  &:visited {
+    color: #1e90ff;
+    border-bottom: 1px dotted #1e90ff;
+  }
+  &:hover {
+    background: transparent;
+    color: #39ff14;
+  }
+}
 
 table {
   border-collapse: collapse;
