@@ -1,24 +1,20 @@
-# README
+# Contact List
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a contact list used by my daughter's kindergarten class.
 
-Things you may want to cover:
+It can be viewed by [clicking here!](https://www.burleson-contact-list.herokuapp.com)
 
-* Ruby version
+**Concerns**
 
-* System dependencies
+- make a centralized contact list where parents can access the most up-to-date information at any time without the constant back-and-forth emails
+- secure this information so it's not openly available to the public
+- ensure the accuracy of the information provided
 
-* Configuration
+**Technology Used**
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Ruby on Rails
+  - used to store, query, and display family contacts
+- Devise
+  - user authentication
+  - protected create/edit views to be managed by admin
+- Sass styling
