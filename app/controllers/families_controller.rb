@@ -1,23 +1,19 @@
-class FamiliesController < ApplicationController
-  
-  before_action :authenticate_user!
-  before_action :set_family, only: [:show, :edit, :update, :destroy]
+# frozen_string_literal: true
 
-  # GET /families
-  # GET /families.json
+class FamiliesController < ApplicationController
+  before_action :authenticate_user!
+  before_action :set_family, only: %i[show edit update destroy]
+
   def index
     @families = Family.all.order(kid: :asc)
   end
 
-  # GET /families/1
-  # GET /families/1.json
   def show
-    if !current_user.is_admin
-      redirect_to families_url
-    end
+    redirect_to families_url unless current_user.is_admin
   end
 
   # GET /families/new
+  # this is a new comment
   def new
     if current_user.is_admin
       @family = Family.new
@@ -27,8 +23,7 @@ class FamiliesController < ApplicationController
   end
 
   # GET /families/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /families
   # POST /families.json
@@ -71,13 +66,14 @@ class FamiliesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_family
-      @family = Family.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def family_params
-      params.require(:family).permit(:kid, :last_name, :parent_name, :email, :phone_number)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_family
+    @family = Family.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def family_params
+    params.require(:family).permit(:kid, :last_name, :parent_name, :email, :phone_number)
+  end
 end
