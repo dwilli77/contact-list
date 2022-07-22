@@ -13,6 +13,7 @@ class FamiliesController < ApplicationController
   end
 
   # GET /families/new
+  # this is a new comment
   def new
     if current_user.is_admin
       @family = Family.new
